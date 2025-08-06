@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary    run_on_failure=NOTHING
-Library    AllureLibrary
 Library    ../Resources/Libs/DotEnv/    ${AMBIENTE}
 Library    ../Resources/Libs/Uteis/ChromeWebdriver_Manager.py
 Library    OperatingSystem

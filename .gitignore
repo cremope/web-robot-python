@@ -1,0 +1,26 @@
+# Ambiente virtual
+venv/
+.env/
+
+# Resultados do Robot Framework
+results/
+output.xml
+log.html
+report.html
+
+# Relatório Allure
+site/
+
+# VS Code
+.vscode/
+
+# Arquivos temporários e cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.libspec
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db

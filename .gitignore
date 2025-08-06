@@ -8,9 +8,6 @@ output.xml
 log.html
 report.html
 
-# Relatório Allure
-site/
-
 # VS Code
 .vscode/
 

@@ -5,6 +5,8 @@ Resource  ../Steps/RCremonez/Home_Steps.robot
 *** Keywords ***
 Open Chrome
     [Arguments]    ${URLAcesso}=${URL}
+    ${GITHUB_CI}    Get Environment Variable    CI
+
     ${CHROME_OPTIONS}=  Evaluate  selenium.webdriver.ChromeOptions()
     Call Method    ${CHROME_OPTIONS}    add_argument    --incognito    
     Call Method    ${CHROME_OPTIONS}    add_argument    --disable-notifications   
@@ -17,5 +19,16 @@ Open Chrome
     Call Method    ${CHROME_OPTIONS}    add_argument    --mute-audio
     Call Method    ${CHROME_OPTIONS}    add_argument    --start-maximized
 
-    Open Browser    ${URLAcesso}    chrome    options=${CHROME_OPTIONS}
+    Run Keyword If  ${GITHUB_CI}==True   With Headless     ${CHROME_OPTIONS}   ${URLAcesso} 
+    Run Keyword If  ${GITHUB_CI}==False  Without Headless  ${CHROME_OPTIONS}   ${URLAcesso}
     Maximize Browser Window
+With Headless
+    [Arguments]  ${CHROME_OPTIONS}    ${URLAcesso}
+    Call Method    ${CHROME_OPTIONS}    add_argument    --headless
+    Open Browser    ${URLAcesso}    chrome    options=${CHROME_OPTIONS}
+    Set Window Size    1440    900
+
+Without Headless
+    [Arguments]  ${CHROME_OPTIONS}    ${URLAcesso}
+    Open Browser    ${URLAcesso}    chrome   options=${CHROME_OPTIONS}
+    Set Window Size    1440    900

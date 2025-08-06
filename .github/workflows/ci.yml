@@ -25,14 +25,17 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          
-      - name: Exibir variável CI
+
+      - name: Show CI variable
         run: echo "CI=${CI}"
 
       - name: Run Robot tests
         run: |
           mkdir -p results
           robot --outputdir results Tests
+
+      - name: Rename report.html to index.html
+        run: mv results/report.html results/index.html
 
       - name: Deploy Robot Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

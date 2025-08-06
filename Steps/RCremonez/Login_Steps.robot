@@ -7,7 +7,7 @@ Resource  ../../Steps/Base_Steps.robot
 *** Keywords ***
 Acessa Url
     [Documentation]    Acessa a url informada - Abre navegador(driver) anonimo, acessa url e maxima a tela
-    Open Chrome    ${URL}
+    Abre Chrome    ${URL}
     Coleta Evidencia
     
 Informo o usuario
@@ -28,4 +28,10 @@ Clico no botao entrar
     [Documentation]    Clico no botão Entrar
     Aguarda carregamento completo da pagina e elemento    ${Login.Btn_Entrar}
     Click Element    ${Login.Btn_Entrar}
+    Coleta Evidencia
+
+Valida mensagem Preencha todos os campos
+    [Documentation]    Valida mensagem de erro 'Preencha todos os campos.'
+    Aguarda carregamento completo da pagina e elemento    ${Login.Msg_PreenchaCampos}
+    Element Should Contain    ${Login.Msg_PreenchaCampos}    Preencha todos os campos.
     Coleta Evidencia

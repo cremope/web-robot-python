@@ -14,8 +14,9 @@ def find_existing_chromedriver_path():
     retorna esse caminho. Caso contrário, informa que não existe o caminho para essa versão.
     """
     python_folder = f"Python{sys.version_info.major}{sys.version_info.minor}"
+    user = os.getenv("USERNAME") or os.getenv("USER") or os.getlogin()
     possible_paths = [
-        r"C:\Users\RL90\AppData\Local\Programs\Python\Python313\Scripts"
+        rf"C:\Users\{user}\AppData\Local\Programs\Python\Python313\Scripts"
     ]
     for path in possible_paths:
         if python_folder in path and os.path.exists(path) and os.path.isdir(path):

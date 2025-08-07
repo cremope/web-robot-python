@@ -1,5 +1,8 @@
 # web-robot-python
 
+[![Build Status](https://github.com/cremope/web-robot-python/actions/workflows/ci.yml/badge.svg)](https://github.com/cremope/web-robot-python/actions/workflows/ci.yml)
+[![Test Report](https://img.shields.io/badge/Robot_Report-View-blue)](https://cremope.github.io/web-robot-python/)
+
 Projeto de automação de testes web utilizando Robot Framework com Python, executando via GitHub Actions e relatório publicado no GitHub Pages.
 
 ## Dependências
@@ -31,4 +34,5 @@ Para visualizar o relatório de testes [Clique aqui](https://cremope.github.io/w
 <img src="https://github.com/cremope/web-robot-python/blob/main/ScreenShots/Report_Overview.png" width="400" /> 
 <img src="https://github.com/cremope/web-robot-python/blob/main/ScreenShots/Log_Overview.png" width="400" /> 
 <img src="https://github.com/cremope/web-robot-python/blob/main/ScreenShots/TC01_CaminhoFeliz_Overview.png" width="800" /> 
-<img src="https://github.com/cremope/web-robot-python/blob/main/ScreenShots/TC02_FluxoValidacao_Overview.png" width="800" /> 
+<img src="https://github.com/cremope/web-robot-python/blob/main/ScreenShots/TC02_FluxoValidacao_Overview.png" width="800" />
+ 
